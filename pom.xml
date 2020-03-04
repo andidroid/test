@@ -59,7 +59,7 @@
     <maven-pmd-plugin.version>3.13.0</maven-pmd-plugin.version>
     <maven-dependency-plugin.version>3.1.1</maven-dependency-plugin.version>
     <maven-release-plugin.version>3.0.0-M1</maven-release-plugin.version>
-    <maven-scn-plugin.version>3.0.0-M1</maven-scn-plugin.version>
+    <maven-scm-plugin.version>3.0.0-M1</maven-scm-plugin.version>
     <maven-scm-publish-plugin.version>3.0.0-M1</maven-scm-publish-plugin.version>
     <maven-project-info-reports-plugin.version>3.0.0</maven-project-info-reports-plugin.version>
   </properties>
@@ -80,14 +80,6 @@
   </dependencies>
 
   <build>
-    <plugins>
-      <plugin>
-        <artifactId>maven-scm-plugin</artifactId>
-        <configuration>
-          <tagNameFormat>v@{project.version}</tagNameFormat>
-        </configuration>
-      </plugin>
-    </plugins>
     <pluginManagement>
       <!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
@@ -162,9 +154,6 @@
         <plugin>
           <artifactId>maven-scm-plugin</artifactId>
           <version>${maven-scm-plugin.version}</version>
-          <configuration>
-            <tagNameFormat>v@{project.version}</tagNameFormat>
-          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-scm-publish-plugin</artifactId>
@@ -176,5 +165,13 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <plugins>
+      <plugin>
+        <artifactId>maven-scm-plugin</artifactId>
+        <configuration>
+          <tagNameFormat>v@{project.version}</tagNameFormat>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>
