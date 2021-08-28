@@ -28,7 +28,12 @@ jobs:
       run: mvn -B package --file pom.xml
       
     - name: Commit new version to GitHub and create tag
-      run: mvn release:prepare -B -DautoVersionSubmodules=true -DskipTests=true
+      run: |
+          git config --local user.email "$(git log --format='%ae' HEAD^!)"
+          git config --local user.name "$(git log --format='%an' HEAD^!)"
+          git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
+          git pull github ${GITHUB_REF} --ff-only
+          mvn release:prepare -B -DautoVersionSubmodules=true -DskipTests=true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
