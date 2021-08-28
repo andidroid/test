@@ -32,7 +32,8 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           git status
-          mvn release:prepare -B -DautoVersionSubmodules=true -DskipTests=true -DconnectionUrl=scm:git: -DdeveloperConnectionUrl=scm:git: --file pom.xml
+          mvn release:prepare -B -DautoVersionSubmodules=true -DskipTests=true -DpushChanges=false --file pom.xml
+          git push
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
