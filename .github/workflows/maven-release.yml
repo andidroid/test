@@ -27,12 +27,12 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
       
-    - name: Commit new version to GitHun and create tag
-      run: mvn release:prepare -B -DautoVersionSubmodules=true -DskipTests=true -s $GITHUB_WORKSPACE/settings.xml
+    - name: Commit new version to GitHub and create tag
+      run: mvn release:prepare -B -DautoVersionSubmodules=true -DskipTests=true
       env:
-        GITHUB_TOKEN: ${{ github.token }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
     - name: Publish to GitHub Packages Apache Maven
-      run: mvn release:perform -B -DskipTests=true -s $GITHUB_WORKSPACE/settings.xml
+      run: mvn release:perform -B -DskipTests=true
       env:
-        GITHUB_TOKEN: ${{ github.token }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
