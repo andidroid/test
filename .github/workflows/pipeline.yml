@@ -1,4 +1,4 @@
-name: Java CI
+name: Java CI Pipeline
 
 on: [push]
 
@@ -21,11 +21,53 @@ jobs:
         path: ~/.m2
         key: ${{ runner.os }}-m2-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}
         restore-keys: ${{ runner.os }}-m2
-    - name: Build with Maven
+    - name: Build and Test
       run: mvn -B -U clean package
     - name: License check
       run: mvn -B license:add-third-party
-    - name: License check
+    - name: OWASP Dependency check
       run: mvn -B dependency-check:aggregate
+
+  check:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+    - name: Cache Maven packages
+      uses: actions/cache@v2
+      env:
+        cache-name: cache-maven-modules
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-m2
+    - name: License check
+      run: mvn -B license:add-third-party
+    - name: OWASP Dependency check
+      run: mvn -B dependency-check:aggregate
+
+  site:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+    - name: Cache Maven packages
+      uses: actions/cache@v2
+      env:
+        cache-name: cache-maven-modules
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-m2
     - name: Site Generation
       run: mvn -B site
