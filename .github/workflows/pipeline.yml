@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   build:
-
+    name: Build
     runs-on: ubuntu-latest
 
     steps:
@@ -25,6 +25,7 @@ jobs:
       run: mvn -B -U clean package
 
   test:
+    name: Test
     needs: build
     runs-on: ubuntu-latest
 
@@ -46,6 +47,7 @@ jobs:
       run: mvn -B test
 
   check:
+    name: OWASP and License Check
     needs: build
     runs-on: ubuntu-latest
 
@@ -58,7 +60,7 @@ jobs:
     - name: Cache Maven packages
       uses: actions/cache@v2
       env:
-        cache-name: cache-maven-modules
+        cache-name: cache-maven-check-modules
       with:
         path: ~/.m2
         key: ${{ runner.os }}-m2-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}
@@ -69,7 +71,8 @@ jobs:
       run: mvn -B dependency-check:aggregate
 
   sonar:
-    name: Build
+    needs: build
+    name: Sonar check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -102,6 +105,7 @@ jobs:
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=andidroid_test -Dsonar.organization=andidroid -Dsonar.host.url=https://sonarcloud.io
 
   site:
+    name: Site Generation
     needs: build
     runs-on: ubuntu-latest
 
