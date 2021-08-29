@@ -19,5 +19,6 @@ jobs:
         cache-name: cache-maven-modules
       with:
         path: ~/.m2
+        key: ${{ runner.os }}-build-${{ env.cache-name }}
     - name: Build with Maven
       run: mvn -B clean package --file pom.xml
