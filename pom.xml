@@ -42,7 +42,11 @@
       <url>https://maven.pkg.github.com/andidroid</url>
     </snapshotRepository>
     -->
-    <!--<site></site>-->
+    <site>
+      <id>github</id>
+      <name>GitHub andidroid Apache Maven Packages</name>
+      <url>scm:git:https://github.com/andidroid/test.git</url>
+    </site>
   </distributionManagement>
 
   <properties>
