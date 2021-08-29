@@ -193,6 +193,9 @@
         <plugin>
           <artifactId>maven-scm-publish-plugin</artifactId>
           <version>${maven-scm-publish-plugin.version}</version>
+          <configuration>
+            <scmBranch>gh-pages</scmBranch>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-project-info-reports-plugin</artifactId>
