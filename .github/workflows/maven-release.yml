@@ -32,8 +32,10 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           git status
-          mvn release:prepare -B -DautoVersionSubmodules=true -DskipTests=true -DpushChanges=false --file pom.xml
+          mvn release:prepare -B -DautoVersionSubmodules=true -DskipTests=true -DpushChanges=false
           git status
+          pwd
+          ls -al
           git push
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
