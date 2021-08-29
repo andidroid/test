@@ -23,6 +23,12 @@ jobs:
           git commit -m "generated"
           mvn release:prepare -B -DautoVersionSubmodules=true -DskipTests=true
           git push
+      - name: Site Upload
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          mvn -B site site:stage
+          mvn -B scm-publish:publish-scm  
       - name: Publish to GitHub Packages Apache Maven
         run: |
           git config user.name github-actions
