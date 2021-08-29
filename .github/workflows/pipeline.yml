@@ -118,7 +118,7 @@ jobs:
     - name: Cache Maven packages
       uses: actions/cache@v2
       env:
-        cache-name: cache-maven-modules
+        cache-name: cache-maven-site-modules
       with:
         path: ~/.m2
         key: ${{ runner.os }}-m2-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}
@@ -130,5 +130,3 @@ jobs:
         git config user.name github-actions
         git config user.email github-actions@github.com
         mvn -B scm-publish:publish-scm  
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
