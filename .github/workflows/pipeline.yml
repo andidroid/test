@@ -124,6 +124,6 @@ jobs:
         key: ${{ runner.os }}-m2-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}
         restore-keys: ${{ runner.os }}-m2
     - name: Site Generation
-      run: mvn -B site
+      run: mvn -B site site:stage
     - name: Site Upload
       run: mvn -B scm-publish:publish-scm  
