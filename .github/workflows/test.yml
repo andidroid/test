@@ -21,4 +21,5 @@ jobs:
           git config user.email github-actions@github.com
           git add .
           git commit -m "generated"
+          mvn release:prepare -B -DautoVersionSubmodules=true -DskipTests=true -DpushChanges=false
           git push
