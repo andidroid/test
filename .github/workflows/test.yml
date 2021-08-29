@@ -23,3 +23,7 @@ jobs:
           git commit -m "generated"
           mvn release:prepare -B -DautoVersionSubmodules=true -DskipTests=true
           git push
+      - name: Publish to GitHub Packages Apache Maven
+        run: mvn release:perform -B -DskipTests=true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
