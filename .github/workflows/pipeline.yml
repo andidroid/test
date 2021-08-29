@@ -125,3 +125,5 @@ jobs:
         restore-keys: ${{ runner.os }}-m2
     - name: Site Generation
       run: mvn -B site
+    - name: Site Upload
+      run: mvn -B scm-publish:publish-scm  
