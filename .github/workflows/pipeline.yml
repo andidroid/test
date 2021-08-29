@@ -126,4 +126,9 @@ jobs:
     - name: Site Generation
       run: mvn -B site site:stage
     - name: Site Upload
-      run: mvn -B scm-publish:publish-scm  
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        mvn -B scm-publish:publish-scm  
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
