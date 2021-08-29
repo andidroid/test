@@ -24,6 +24,9 @@ jobs:
           mvn release:prepare -B -DautoVersionSubmodules=true -DskipTests=true
           git push
       - name: Publish to GitHub Packages Apache Maven
-        run: mvn release:perform -B -DskipTests=true
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          mvn release:perform -B -DskipTests=true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
