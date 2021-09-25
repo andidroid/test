@@ -26,6 +26,8 @@ jobs:
       - name: Site Upload
         run: |
           mvn -B site site:stage
+          git config --global user.name github-actions
+          git config --global user.email github-actions@github.com
           mvn -B scm-publish:publish-scm  
       - name: Publish to GitHub Packages Apache Maven
         run: |
