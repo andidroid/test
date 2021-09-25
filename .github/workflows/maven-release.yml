@@ -22,6 +22,15 @@ jobs:
           server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
           settings-path: ${{ github.workspace }} # location for the settings.xml file
 
+      - name: Cache Maven packages
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-maven-modules
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+
       - name: Commit new version to GitHub and create tag
         run: |
           git config --global user.name github-actions
@@ -31,6 +40,6 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
 
       - name: Publish to GitHub Packages Apache Maven
-        run: mvn release:perform -B -DskipTests=true -s $GITHUB_WORKSPACE/settings.xml
+        run: mvn release:perform -B -DskipTests=true -Dmaven.site.skip=true -s $GITHUB_WORKSPACE/settings.xml
         env:
           GITHUB_TOKEN: ${{ github.token }}
