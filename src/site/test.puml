@@ -1,8 +1,4 @@
-# test
-Test
-
-```plantuml
-@startuml
+@startuml test
     skinparam backgroundColor #EEEBDC
     skinparam handwritten true
     actor Customer
@@ -15,6 +11,3 @@ Test
     "logout()" -> Customer : ok
     deactivate "login()"
 @enduml
-```
-
-Ende
