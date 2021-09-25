@@ -53,6 +53,8 @@ jobs:
         with:
           java-version: "11"
           distribution: "adopt"
+          server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
+          settings-path: ${{ github.workspace }} # location for the settings.xml file
       - name: Cache Maven packages
         uses: actions/cache@v2
         env:
@@ -67,7 +69,7 @@ jobs:
         run: |
           git config --global user.name github-actions
           git config --global user.email github-actions@github.com
-          mvn -B scm-publish:publish-scm
+          mvn -B scm-publish:publish-scm -s $GITHUB_WORKSPACE/settings.xml
       - uses: actions/upload-artifact@v2
         with:
           name: site-artifact
