@@ -8,7 +8,6 @@ on: workflow_dispatch
 jobs:
   site:
     name: Site Generation
-    needs: build
     runs-on: ubuntu-latest
     permissions:
       contents: write
