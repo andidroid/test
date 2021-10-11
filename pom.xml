@@ -35,13 +35,11 @@
       <name>GitHub andidroid Apache Maven Packages</name>
       <url>https://maven.pkg.github.com/andidroid/test</url>
     </repository>
-    <!--
     <snapshotRepository>
       <id>github</id>
       <name>GitHub andidroid Apache Maven Packages</name>
-      <url>https://maven.pkg.github.com/andidroid</url>
+      <url>https://maven.pkg.github.com/andidroid/test-snapshot</url>
     </snapshotRepository>
-    -->
     <site>
       <id>github</id>
       <name>GitHub andidroid Apache Maven Packages</name>
