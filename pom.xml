@@ -78,7 +78,7 @@
     <maven-dependency-plugin.version>3.2.0</maven-dependency-plugin.version>
     <maven-enforcer-plugin.version>3.0.0</maven-enforcer-plugin.version>
     <maven-invoker-plugin.version>3.2.2</maven-invoker-plugin.version>
-    <maven-release-plugin.version>3.0.0-M4</maven-release-plugin.version>
+    <maven-release-plugin.version>3.0.0-M5</maven-release-plugin.version>
     <maven-scm-plugin.version>1.12.2</maven-scm-plugin.version>
     <maven-scm-publish-plugin.version>3.1.0</maven-scm-publish-plugin.version>
     <maven-project-info-reports-plugin.version>3.1.2</maven-project-info-reports-plugin.version>
