@@ -5,7 +5,7 @@
 
   <groupId>me.andidroid</groupId>
   <artifactId>test</artifactId>
-  <version>0.0.29-SNAPSHOT</version>
+  <version>0.0.30-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>test</name>
