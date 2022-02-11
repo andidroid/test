@@ -78,7 +78,11 @@
     <maven-assembly-plugin.version>3.3.0</maven-assembly-plugin.version>
     <maven-dependency-plugin.version>3.2.0</maven-dependency-plugin.version>
     <maven-enforcer-plugin.version>3.0.0</maven-enforcer-plugin.version>
+    <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
+    <maven-help-plugin.version>3.2.0</maven-help-plugin.version>
     <maven-invoker-plugin.version>3.2.2</maven-invoker-plugin.version>
+    <maven-jarsigner-plugin.version>3.0.0</maven-jarsigner-plugin.version>
+    <maven-pdf-plugin.version>1.5.1</maven-pdf-plugin.version>
     <maven-release-plugin.version>3.0.0-M5</maven-release-plugin.version>
     <maven-scm-plugin.version>1.12.2</maven-scm-plugin.version>
     <maven-scm-publish-plugin.version>3.1.0</maven-scm-publish-plugin.version>
@@ -217,7 +221,6 @@
         </plugin>
         <plugin>
           <artifactId>maven-enforcer-plugin</artifactId>
-
           <version>${maven-enforcer-plugin.version}</version>
           <executions>
             <execution>
@@ -247,8 +250,24 @@
           </executions>
         </plugin>
         <plugin>
+          <artifactId>maven-gpg-plugin</artifactId>
+          <version>${maven-gpg-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-help-plugin</artifactId>
+          <version>${maven-help-plugin.version}</version>
+        </plugin>
+        <plugin>
           <artifactId>maven-invoker-plugin</artifactId>
           <version>${maven-invoker-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-jarsigner-plugin</artifactId>
+          <version>${maven-jarsigner-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-pdf-plugin</artifactId>
+          <version>${maven-pdf-plugin.version}</version>
         </plugin>
         <plugin>
           <artifactId>maven-release-plugin</artifactId>
