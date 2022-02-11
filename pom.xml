@@ -255,6 +255,8 @@
           <version>${maven-release-plugin.version}</version>
           <configuration>
             <tagNameFormat>v@{project.version}</tagNameFormat>
+            <signTag>true</signTag>
+            <autoVersionSubmodules>true</autoVersionSubmodules>
           </configuration>
         </plugin>
         <plugin>
