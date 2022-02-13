@@ -30,13 +30,13 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
-      #      - name: Site Generation
-      #        run: mvn -B site site:stage
+            - name: Site Generation
+              run: mvn -B site site:stage
       - name: Site Upload
         run: |
           git config --global user.name github-actions
           git config --global user.email github-actions@github.com
-          mvn -B site site:stage scm-publish:publish-scm -s $GITHUB_WORKSPACE/settings.xml -Dusername=github-actions -Dpassword=${{ secrets.GITHUB_TOKEN }}
+          mvn -B scm-publish:publish-scm -s $GITHUB_WORKSPACE/settings.xml -Dusername=github-actions -Dpassword=${{ secrets.GITHUB_TOKEN }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v2
