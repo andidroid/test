@@ -30,19 +30,15 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ env.cache-name }}-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
-      - name: Site Generation
-        run: mvn -B site site:stage
+      #      - name: Site Generation
+      #        run: mvn -B site site:stage
       - name: Site Upload
         run: |
           git config --global user.name github-actions
           git config --global user.email github-actions@github.com
-          mvn -B scm-publish:publish-scm -s $GITHUB_WORKSPACE/settings.xml -Dscmpublish.skipCheckin=true
-          cd target/scmpublish-checkout
-          git add .
-          git commit -m"update github pages with maven site"
-          git push
+          mvn -B site site:stage scm-publish:publish-scm -s $GITHUB_WORKSPACE/settings.xml
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v2
         with:
           name: site-artifact
