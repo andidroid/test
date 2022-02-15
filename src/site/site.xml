@@ -7,7 +7,17 @@
     </skin>
 
     <body>
+        <menu name="Test">
+            <item name="test" href="test.html" />
+        </menu>
+        <menu name="Overview">
+            <item name="main" href="main.html" />
+            <item name="github" href="github.html" />
+            <item name="plantuml" href="plantuml.html" />
+        </menu>
         <menu ref="modules" />
         <menu ref="reports" />
+        <menu ref="parent" />
+        
     </body>
 </project>

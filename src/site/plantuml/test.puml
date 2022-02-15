@@ -1,6 +1,6 @@
 @startuml test
-    skinparam backgroundColor #EEEBDC
-    skinparam handwritten true
+    !theme materia-outline
+    skinparam handwritten false
     actor Customer
     Customer -> "login()" : username & password
     "login()" -> Customer : session token
