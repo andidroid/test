@@ -98,7 +98,7 @@
     <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
 
     <plantuml-maven-plugin.version>1.2</plantuml-maven-plugin.version>
-    <plantuml.version>1.2022.2</plantuml.version>
+    <plantuml.version>1.2022.3</plantuml.version>
   </properties>
 
   <dependencyManagement>
