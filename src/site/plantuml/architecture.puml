@@ -1,0 +1,22 @@
+@startuml
+!include <cloudinsight/tomcat>
+!include <cloudinsight/kafka>
+!include <cloudinsight/java>
+!include <cloudinsight/cassandra>
+!include <cloudinsight/mongodb>
+!include <cloudinsight/activemq>
+
+
+title Cloudinsight sprites example
+
+skinparam monochrome true
+
+rectangle "<$tomcat>\nwebapp" as webapp
+queue "<$kafka>\nkafka" as kafka
+rectangle "<$java>\njava" as java
+database "<$mongodb>\nmongodb" as mongodb
+
+webapp -> kafka
+kafka -> java
+java --> mongodb
+@enduml
