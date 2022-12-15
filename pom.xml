@@ -89,7 +89,7 @@
     <maven-scm-publish-plugin.version>3.1.0</maven-scm-publish-plugin.version>
     <maven-project-info-reports-plugin.version>3.4.1</maven-project-info-reports-plugin.version>
 
-    <versions-maven-plugin.version>2.13.0</versions-maven-plugin.version>
+    <versions-maven-plugin.version>2.14.0</versions-maven-plugin.version>
     <license-maven-plugin.version>2.0.0</license-maven-plugin.version>
 
     <spotbugs-maven-plugin.version>4.7.3.0</spotbugs-maven-plugin.version>
