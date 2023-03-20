@@ -80,12 +80,12 @@
     <maven-dependency-plugin.version>3.5.0</maven-dependency-plugin.version>
     <maven-enforcer-plugin.version>3.2.1</maven-enforcer-plugin.version>
     <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
-    <maven-help-plugin.version>3.3.0</maven-help-plugin.version>
+    <maven-help-plugin.version>3.4.0</maven-help-plugin.version>
     <maven-invoker-plugin.version>3.5.0</maven-invoker-plugin.version>
     <maven-jarsigner-plugin.version>3.0.0</maven-jarsigner-plugin.version>
     <maven-pdf-plugin.version>1.6.1</maven-pdf-plugin.version>
     <maven-release-plugin.version>3.0.0</maven-release-plugin.version>
-    <maven-scm-plugin.version>2.0.0-M3</maven-scm-plugin.version>
+    <maven-scm-plugin.version>2.0.0</maven-scm-plugin.version>
     <maven-scm-publish-plugin.version>3.1.0</maven-scm-publish-plugin.version>
     <maven-project-info-reports-plugin.version>3.4.2</maven-project-info-reports-plugin.version>
 
