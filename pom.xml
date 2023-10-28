@@ -90,7 +90,7 @@
     <maven-project-info-reports-plugin.version>3.4.5</maven-project-info-reports-plugin.version>
 
     <versions-maven-plugin.version>2.16.1</versions-maven-plugin.version>
-    <license-maven-plugin.version>2.2.0</license-maven-plugin.version>
+    <license-maven-plugin.version>2.3.0</license-maven-plugin.version>
 
     <spotbugs-maven-plugin.version>4.7.3.6</spotbugs-maven-plugin.version>
     <owasp-dependency-check-plugin.version>8.4.2</owasp-dependency-check-plugin.version>
