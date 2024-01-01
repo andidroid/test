@@ -74,7 +74,7 @@
     <maven-checkstyle-plugin.version>3.3.1</maven-checkstyle-plugin.version>
     <maven-surefire-report-plugin.version>3.2.3</maven-surefire-report-plugin.version>
     <maven-pmd-plugin.version>3.21.2</maven-pmd-plugin.version>
-    <maven-jxr-plugin.version>3.3.1</maven-jxr-plugin.version>
+    <maven-jxr-plugin.version>3.3.2</maven-jxr-plugin.version>
     <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
     <maven-assembly-plugin.version>3.6.0</maven-assembly-plugin.version>
     <maven-dependency-plugin.version>3.6.1</maven-dependency-plugin.version>
