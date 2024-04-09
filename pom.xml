@@ -352,40 +352,53 @@
           <artifactId>jacoco-maven-plugin</artifactId>
           <version>${jacoco-maven-plugin.version}</version>
         </plugin>
+        <plugin>
+          <groupId>com.github.jeluard</groupId>
+          <artifactId>plantuml-maven-plugin</artifactId>
+          <version>${plantuml-maven-plugin.version}</version>
+          <configuration>
+            <sourceFiles>
+              <directory>${basedir}/src/site/plantuml</directory>
+              <includes>
+                <include>**/*.puml</include>
+              </includes>
+            </sourceFiles>
+            <outputDirectory>${basedir}/target/site/images/uml</outputDirectory>
+            <format>svg</format>
+            <charset>UTF-8</charset>
+          </configuration>
+          <dependencies>
+            <dependency>
+              <groupId>net.sourceforge.plantuml</groupId>
+              <artifactId>plantuml</artifactId>
+              <version>${plantuml.version}</version>
+            </dependency>
+          </dependencies>
+          <executions>
+            <execution>
+              <id>plantuml-generation</id>
+              <phase>pre-site</phase>
+              <goals>
+                <goal>generate</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <artifactId>maven-jxr-plugin</artifactId>
+          <version>${maven-jxr-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>com.github.spotbugs</groupId>
+          <artifactId>spotbugs-maven-plugin</artifactId>
+          <version>${spotbugs-maven-plugin.version}</version>
+        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
       <plugin>
         <groupId>com.github.jeluard</groupId>
         <artifactId>plantuml-maven-plugin</artifactId>
-        <version>${plantuml-maven-plugin.version}</version>
-        <configuration>
-          <sourceFiles>
-            <directory>${basedir}/src/site/plantuml</directory>
-            <includes>
-              <include>**/*.puml</include>
-            </includes>
-          </sourceFiles>
-          <outputDirectory>${basedir}/target/site/images/uml</outputDirectory>
-          <format>svg</format>
-          <charset>UTF-8</charset>
-        </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>net.sourceforge.plantuml</groupId>
-            <artifactId>plantuml</artifactId>
-            <version>${plantuml.version}</version>
-          </dependency>
-        </dependencies>
-        <executions>
-          <execution>
-            <id>plantuml-generation</id>
-            <phase>pre-site</phase>
-            <goals>
-              <goal>generate</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
     </plugins>
   </build>
@@ -393,11 +406,9 @@
     <plugins>
       <plugin>
         <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>${maven-project-info-reports-plugin.version}</version>
       </plugin>
       <plugin>
         <artifactId>maven-jxr-plugin</artifactId>
-        <version>${maven-jxr-plugin.version}</version>
         <reportSets>
           <reportSet>
             <id>aggregate</id>
@@ -410,11 +421,9 @@
       </plugin>
       <plugin>
         <artifactId>maven-surefire-report-plugin</artifactId>
-        <version>${maven-failsafe-plugin.version}</version>
       </plugin>
       <plugin>
         <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>${maven-checkstyle-plugin.version}</version>
         <reportSets>
           <reportSet>
             <reports>
@@ -426,24 +435,20 @@
 
       <plugin>
         <artifactId>maven-pmd-plugin</artifactId>
-        <version>${maven-pmd-plugin.version}</version>
       </plugin>
 
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>license-maven-plugin</artifactId>
-        <version>${license-maven-plugin.version}</version>
       </plugin>
 
       <plugin>
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-maven-plugin</artifactId>
-        <version>${spotbugs-maven-plugin.version}</version>
       </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>versions-maven-plugin</artifactId>
-        <version>${versions-maven-plugin.version}</version>
         <reportSets>
           <reportSet>
             <reports>
@@ -457,7 +462,6 @@
       <plugin>
         <groupId>org.owasp</groupId>
         <artifactId>dependency-check-maven</artifactId>
-        <version>${owasp-dependency-check-plugin.version}</version>
         <reportSets>
           <reportSet>
             <reports>
@@ -469,7 +473,6 @@
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
-        <version>${jacoco-maven-plugin.version}</version>
         <reportSets>
           <reportSet>
             <reports>
