@@ -93,7 +93,7 @@
     <license-maven-plugin.version>2.4.0</license-maven-plugin.version>
 
     <spotbugs-maven-plugin.version>4.8.6.4</spotbugs-maven-plugin.version>
-    <owasp-dependency-check-plugin.version>10.0.4</owasp-dependency-check-plugin.version>
+    <owasp-dependency-check-plugin.version>11.0.0</owasp-dependency-check-plugin.version>
     <sonar-maven-plugin.version>4.0.0.4121</sonar-maven-plugin.version>
     <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
 
