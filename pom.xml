@@ -94,7 +94,7 @@
 
     <spotbugs-maven-plugin.version>4.8.6.6</spotbugs-maven-plugin.version>
     <owasp-dependency-check-plugin.version>11.1.0</owasp-dependency-check-plugin.version>
-    <sonar-maven-plugin.version>4.0.0.4121</sonar-maven-plugin.version>
+    <sonar-maven-plugin.version>5.0.0.4389</sonar-maven-plugin.version>
     <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
 
     <plantuml-maven-plugin.version>1.2</plantuml-maven-plugin.version>
