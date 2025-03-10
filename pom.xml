@@ -83,7 +83,7 @@
     <maven-help-plugin.version>3.5.1</maven-help-plugin.version>
     <maven-invoker-plugin.version>3.9.0</maven-invoker-plugin.version>
     <maven-jarsigner-plugin.version>3.1.0</maven-jarsigner-plugin.version>
-    <maven-pdf-plugin.version>1.6.1</maven-pdf-plugin.version>
+    <maven-pdf-plugin.version>1.6.2</maven-pdf-plugin.version>
     <maven-release-plugin.version>3.1.1</maven-release-plugin.version>
     <maven-scm-plugin.version>2.1.0</maven-scm-plugin.version>
     <maven-scm-publish-plugin.version>3.3.0</maven-scm-publish-plugin.version>
