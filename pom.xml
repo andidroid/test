@@ -52,6 +52,7 @@
     <javaee.version>8.0</javaee.version>
     <slf4j.version>2.0.17</slf4j.version>
     <junit.jupiter.version>5.13.4</junit.jupiter.version>
+    <junit.platform.version>1.13.4</junit.platform.version>
 
     <project.scm.id>github</project.scm.id>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -115,6 +116,12 @@
         <version>${junit.jupiter.version}</version>
         <scope>test</scope>
       </dependency>
+      <dependency>
+        <groupId>org.junit.platform</groupId>
+        <artifactId>junit-platform-suite</artifactId>
+        <version>${junit.platform.version}</version>
+        <scope>test</scope>
+      </dependency>
 
       <dependency>
         <groupId>org.slf4j</groupId>
@@ -171,12 +178,22 @@
           <artifactId>maven-failsafe-plugin</artifactId>
           <version>${maven-failsafe-plugin.version}</version>
           <dependencies>
-                <dependency>
-                    <groupId>org.junit.jupiter</groupId>
-                    <artifactId>junit-jupiter-engine</artifactId>
-                    <version>${junit.jupiter.version}</version>
-                </dependency>
-            </dependencies>
+            <dependency>
+              <groupId>org.junit.jupiter</groupId>
+              <artifactId>junit-jupiter-engine</artifactId>
+              <version>${junit.jupiter.version}</version>
+            </dependency>
+            <dependency>
+              <groupId>org.junit.platform</groupId>
+              <artifactId>junit-platform-engine</artifactId>
+              <version>${junit.platform.version}</version>
+            </dependency>
+            <dependency>
+              <groupId>org.junit.platform</groupId>
+              <artifactId>junit-platform-suite</artifactId>
+              <version>${junit.platform.version}</version>
+            </dependency>
+          </dependencies>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
@@ -194,12 +211,22 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>${maven-surefire-plugin.version}</version>
           <dependencies>
-                <dependency>
-                    <groupId>org.junit.jupiter</groupId>
-                    <artifactId>junit-jupiter-engine</artifactId>
-                    <version>${junit.jupiter.version}</version>
-                </dependency>
-            </dependencies>
+            <dependency>
+              <groupId>org.junit.jupiter</groupId>
+              <artifactId>junit-jupiter-engine</artifactId>
+              <version>${junit.jupiter.version}</version>
+            </dependency>
+            <dependency>
+              <groupId>org.junit.platform</groupId>
+              <artifactId>junit-platform-engine</artifactId>
+              <version>${junit.platform.version}</version>
+            </dependency>
+            <dependency>
+              <groupId>org.junit.platform</groupId>
+              <artifactId>junit-platform-suite</artifactId>
+              <version>${junit.platform.version}</version>
+            </dependency>
+          </dependencies>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
