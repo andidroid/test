@@ -21,7 +21,7 @@ jobs:
           java-version: "21"
           distribution: "temurin"
       - name: Cache Maven packages
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         env:
           cache-name: cache-maven-modules
         with:
@@ -49,7 +49,7 @@ jobs:
           server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
           settings-path: ${{ github.workspace }} # location for the settings.xml file
       - name: Cache Maven packages
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         env:
           cache-name: cache-maven-modules
         with:
@@ -76,7 +76,7 @@ jobs:
           server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
           settings-path: ${{ github.workspace }} # location for the settings.xml file
       - name: Cache Maven packages
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         env:
           cache-name: cache-maven-modules
         with:
@@ -100,7 +100,7 @@ jobs:
           java-version: "21"
           distribution: "temurin"
       - name: Cache Maven packages
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         env:
           cache-name: cache-maven-check-modules
         with:
@@ -126,7 +126,7 @@ jobs:
           java-version: "21"
           distribution: "temurin"
       - name: Cache SonarCloud packages
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         env:
           cache-name: cache-sonar-packages
         with:
@@ -134,7 +134,7 @@ jobs:
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
       - name: Cache Maven packages
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         env:
           cache-name: cache-maven-modules
         with:
@@ -160,7 +160,7 @@ jobs:
           java-version: "21"
           distribution: "temurin"
       - name: Cache Maven packages
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         env:
           cache-name: cache-maven-site-modules
         with:
